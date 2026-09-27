@@ -1,0 +1,93 @@
+---@meta
+
+---@alias action_count_string string
+---| `"used"` # The amount of times the item has been used by an actor.
+---| `"crafted"` # The amount of times the item has been crafted by an actor.
+---| `"collected"` # The amount of times the item was collected by an actor.
+---| `"mined"` # The amount of times the block was minwed by an actor.
+
+---@alias block_script_type_string string
+---| `"entry"` # The script triggered upon entry of a block. Used in Health Blocks as the Killed Script parameter and in Proximity Detectors as the Entry Script parameter.
+---| `"exit"` # The script triggered upon exit of a block. Used in Health Blocks as the Killed Script parameter and in Proximity Detectors as the Exit Script parameter.
+---| `"poweron"` # The script triggered upon powering a block. Used in Health Blocks as the Killed Script parameter and in Script Blocks as the Power On Script parameter.
+---| `"poweroff"` # The script triggered upon unpowering a block. Used in Health Blocks as the Killed Script parameter and in Script Blocks as the Power Off Script parameter.
+
+---@alias context_type_string string
+---| `"actor"` # The actor that activated the script.
+---| `"player"` # The player that activated the script.
+---| `"killer"` # The actor who killed the default actor. Only used in PlayerDeath events or kill scripts.
+---| `"target"` # The actor who was the result of the most recent successful intersection.
+---| `"default"` # The actor that activated the script.
+
+---@alias cursor_face_number integer
+---| `0` # No face (cursor is not on a block.)
+---| `1` # Left/West face.
+---| `2` # Forward/Noth face.
+---| `3` # Right/East face.
+---| `4` # Backwards/South face.
+---| `5` # Up/Top face.
+---| `6` # Down/Bottom face.
+
+---@alias event_string string
+---| `"PlayerJoin"` # The event script triggered when a player joins a world.
+---| `"PlayerLeave"` # The event script triggered when a player leaves a world.
+---| `"PlayerDeath"` # The event script triggered when a player dies.
+---| `"PlayerRespawn"` # The event script triggered when a player respawns after death.
+---| `"ItemSwing"` # The event script triggered when an item is swung.
+---| `"ItemEquip"` # The event script triggered when an item is equipped.
+---| `"ItemUnequip"` # The event script triggered when an item is unequipped.
+---| `"CustomMenu"` # The event script triggered when the Custom Menu menu option is used on the pause screen.
+---| `"ButtonX"` # The event script triggered by the X Button.
+---| `"ButtonY"` # The event script triggered by the Y Button.
+---| `"ButtonB"` # The event script triggered by the B Button.
+---| `"BlockPlaced"` # The event script triggered when a block is placed.
+---| `"BlockCleared"` # The event script triggered when a block is mined.
+
+---@alias event_button_string string
+---| `"ButtonX"` # The event script triggered by the X Button.
+---| `"ButtonY"` # The event script triggered by the Y Button.
+---| `"ButtonB"` # The event script triggered by the B Button.
+
+---@alias item_data_slot_string string
+---| `"item"`
+---| `"lefthand"`
+---| `"righthand"`
+---| `"head"`
+---| `"neck"`
+---| `"body"`
+---| `"leftside"`
+---| `"rightside"`
+---| `"legs"`
+---| `"feet"`
+
+---@alias permission_string string
+---| `"Adventure"` # Permits the player to:<ul><li>Use Economized Shops (though are unable to Econimize shops themselves.)</li><li>Collect pickups.</li><li>Use Bookcases, Unlocked Chests and Furnaces.</li></ul>This permission is enabled by default on new worlds for default permissions.
+---| `"Creative"` #
+---| `"Edit"` #
+---| `"Fly"` # Permits the player to:<ul><li>Fly in Creative.</li><li>Fly in Dig Deep and Survival with the Amulet of Flight.</li></ul>
+---| `"Map"` # Permits the player to:<ul><li>Use the Mini Map view.</li><li>Use the World Map view.</li></ul>This is enabled by default on new worlds for default permissions.
+---| `"TextChat"` # Permits the player to send text chat messages. They can still read text chat without the permission.<br><br>This permission is enabled by default on new worlds for default permissions.
+---| `"VoiceChat"` # Permits the player to voice chat.<br><br>Voice chatting is currently not a feature in Total Miner, so this only serves as a scripting permission.
+---| `"SystemShops"` # Permits the player to access System Shops.<br><br>Economized Shops features are not tied to the Shops/SystemShops permission, as Economizing Shops is linked to the Edit permission and using Economized Shops is linked to the Adventure permission.<br><br>This permission is enabled by default on new worlds for default permissions.
+---| `"Spectate"` # Permits the player to spectate others.<br><br>The Spectate Game Difficulty option needs to be On to spectate regardless of permission.
+---| `"ViewScripts"` # Permits the player to view the world's scripts.<br><br>Adding, assigning, copying, deleting, modifying or running scripts is not tied to this permission and is linked to the Admin permission.<br><br>Users can run Adventure Scripts without this permission.
+---| `"Grief"` # Permits the player to:<ul><li>Use explosives to destroy blocks (Grief is not required for explosives to cause damage to actors.)</li><li>Use the Flood Creative tool.</li></ul>
+---| `"Admin"` #
+---| `"Save"` # Permits the player to save the world onto their own device.
+
+---@alias skill_string string
+---| `"Health"` # Determines the player's Max Health through this formula:<br><code>10 + (3 * health_level)</code><br><br>If a player is level 175 or above in Health, Max Health is set to the value of `380`.
+---| `"Strength"` # Determines the player's Max Stamina through the following formulas:<br><br>If a player is level 0 to 99 in Strength, the following is used:<br><code lang="lua">10 + math.max((strength_level - 9) * 0.25, 0)</code><br><br>If a player is level 100 to 174 in Strength, the following is used:<br><code>0.05 * strength_level + 27.55</code><br><br>If a player is level 175 or above in Strength, Max Stamina is set to the value of `36.299999237061`.
+---| `"Attack"`
+---| `"Defence"`
+---| `"Ranged"`
+---| `"Mining"` # Determines which Pickaxes or Sledge Hammers can be used by the Player and which blocks can be mined with thier hand, Pickaxe, or Sledge Hammer.<br><br>The Mining skill is leveled up by mining blocks with a hand, Pickaxe, or Sledge Hammer.
+---| `"Digging"` # Determines which Shovels can be used by the Player and which blocks can be mined with thier Shovel.<br><br>The Digging skill is leveled up by mining blocks with a Shovel.
+---| `"Chopping"` # Determines which Hatchets can be used by the Player and which blocks can be mined with thier Hatchet.<br><br>The Chopping skill is leveled up by mining blocks with a Hatchet.
+---| `"Building"` # Determines which blocks can be placed by the Player.<br><br>The Building skill is leveled up by placing blocks (except Tilled Earth.)
+---| `"Crafting"` # Determines which blocks or items (excluding all Armor except for Leather, all Food, all Tools and most Weapons) can be crafted by the Player<br><br>The Crafting skill is leveled up by crafting blocks or items that require the Crafting skill.
+---| `"Smelting"` # Determines which blocks or items (excluding Food) can be smelted in a Furnace by the Player<br><br>The Smelting skill is leveled up by smelting items that require the Smelting skill.
+---| `"Smithing"` # Determines which Armor, Tool and Weapon items can be smithed by the Player<br><br>The Smithing skill is leveled up by smithing items that require the Smithing skill.
+---| `"Farming"` # Determines which Hoes and Scythes can be used by the Player and which seeds can be planted on Tilled Earth.<br><br>The Farming skill is leveled up by creating or placing Tilled Earth, mining Crops and planting seeds.
+---| `"Cooking"` # Determines which Food items can be cooked by the Player<br><br>The Cooking skill is leveled up by cooking items that require the Cooking skill.
+---| `"Looting"`
