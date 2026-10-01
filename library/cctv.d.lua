@@ -9,6 +9,7 @@
 ---@param milliseconds? integer The duration of the CCTV in milliseconds. Omit for an infinite duration.
 ---@param swivel_speed? number The swivel speed of the CCTV as a percentage. Omit for `50` or 50%.
 ---@param fov? integer The FOV of the CCTV. Omit for `80`.
+---@see cctv_at
 function cctv(only_as_admin, x, y, z, direction, milliseconds, swivel_speed, fov) end
 
 ---Sends the player into a CCTV camera facing a position
@@ -22,6 +23,7 @@ function cctv(only_as_admin, x, y, z, direction, milliseconds, swivel_speed, fov
 ---@param milliseconds? integer The duration of the CCTV in milliseconds. Omit for an infinite duration.
 ---@param swivel_speed? number The swivel speed of the CCTV as a percentage. Omit for `50` or 50%.
 ---@param fov? integer The FOV of the CCTV. Omit for `80`.
+---@see cctv
 function cctv_at(only_as_admin, x1, y1, z1, x2, y2, z2, milliseconds, swivel_speed, fov) end
 
 ---Forces a CCTV exit from the actor

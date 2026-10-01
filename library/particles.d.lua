@@ -33,6 +33,7 @@
 ---@param emit_pos_offset_x? number X offset position of the particle. Omit for `0`.
 ---@param emit_pos_offset_y? number Y offset position of the particle. Omit for `0`.
 ---@param emit_pos_offset_z? number Z offset position of the particle. Omit for `0`.
+---@see add_particle_emitter
 function add_particle(x, y, z, duration, velocity_x, velocity_y, velociy_z, size_x, size_y, size_z, ending_size_multiplier, start_color_r, start_color_g, start_color_b, start_color_a, gravity, rotation, velocity_var_x, velocity_var_y, velocity_var_z, end_color_r, end_color_g, end_color_b, end_color_a, emit_pos_var_x, emit_pos_var_y,  emit_pos_var_z, emit_pos_offset_x, emit_pos_offset_y, emit_pos_offset_z) end
 
 ---Creates a Particle Emitter that emits particles
@@ -70,4 +71,5 @@ function add_particle(x, y, z, duration, velocity_x, velocity_y, velociy_z, size
 ---@param emit_pos_offset_x? number X offset position of an emitted particle. Omit for `0`.
 ---@param emit_pos_offset_y? number Y offset position of an emitted particle. Omit for `0`.
 ---@param emit_pos_offset_z? number Z offset position of an emitted particle. Omit for `0`.
+---@see add_particle
 function add_particle_emitter(x, y, z, emitter_duration, emitter_frequency, particle_duration, velocity_x, velocity_y, velociy_z, size_x, size_y, size_z, ending_size_multiplier, start_color_r, start_color_g, start_color_b, start_color_a, gravity, rotation, velocity_var_x, velocity_var_y, velocity_var_z, end_color_r, end_color_g, end_color_b, end_color_a, emit_pos_var_x, emit_pos_var_y,  emit_pos_var_z, emit_pos_offset_x, emit_pos_offset_y, emit_pos_offset_z) end

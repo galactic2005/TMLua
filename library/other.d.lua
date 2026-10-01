@@ -6,6 +6,7 @@
 ---@param z number Z position of the pickup.
 ---@param item_id integer The item's ID to create a pickup.
 ---@param quantity? integer The amount of the item to drop with the pickup.
+---@see remove_pickups
 function add_pickup(x, y, z, item_id, quantity) end
 
 ---Starts a Cave-In
@@ -28,11 +29,13 @@ function explosion(x, y, z, radius, strength) end
 
 ---Returns the total amount of players in the world
 ---@return integer # The amount of players in the world.
+---@see get_gamer_count_in_zone
 function get_gamer_count() end
 
 ---Returns the total amount of players in a zone
 ---@param zone_name string The name of the zone to query about.
 ---@return integer # The amount of players in the zone.
+---@see get_gamer_count
 function get_gamer_count_in_zone(zone_name) end
 
 ---Returns the hash code of a string
@@ -42,17 +45,20 @@ function get_hash_code(string_value) end
 
 ---Returns the current hour of the world (a decimal number between 0 to 24.)
 ---@return number # The current hour of the world.
+---@see get_utc
 function get_hour() end
 
 ---Returns the total amount of NPCs of a type in the world
 ---@param npc_type? string The NPC type to search for. Omit to search for all NPC types.
 ---@return integer # The amount of NPCs of the type in the world.
+---@see get_npc_count_in_zone
 function get_npc_count(npc_type) end
 
 ---Returns the total amount of NPCs of a type in a zone
 ---@param zone_name string The name of the zone to query about.
 ---@param npc_type? string The NPC type to search for. Omit to search for all NPC types.
 ---@return integer # The amount of players in the zone.
+---@see get_npc_count
 function get_npc_count_in_zone(zone_name, npc_type) end
 
 ---Returns a random number between `0` and `maximum`
@@ -62,11 +68,21 @@ function get_random(maximum) end
 
 ---Returns the viewport's (the player's screen) height in pixels
 ---@return integer # The height of the viewport in pixels
+---@see get_viewport_width
 function get_viewport_height() end
 
 ---Returns the viewport's (the player's screen) width in pixels
 ---@return integer # The width of the viewport in pixels
+---@see get_viewport_height
 function get_viewport_width() end
+
+---Returns the current UTC time
+---@return utc_table # The current UTC time in a `utc_table`
+---@see get_hour
+---@see is_utc_table
+function get_utc() end
+
+function import() end
 
 ---Returns the result of a random roll of `chance` out of `chances`
 ---@param chance integer The value that the roll is required to be lesser than or equal to for the function to return `true`.
@@ -82,12 +98,24 @@ function is_chance(chance, chances) end
 ---@see is_chance
 function is_random(chance, chances) end
 
+---Returns if the table provided is a udim2 table
+---@param t table The table to check for udim2 metadata
+---@return boolean # `true` if the table provided is a udim2 table.
+function is_udim2(t) end
+
+---Returns if the table provided is a UTC table
+---@param t table The table to check for UTC metadata
+---@return boolean # `true` if the table provided is a UTC table.
+---@see get_utc
+function is_utc_table(t) end
+
 ---Passes `string_data` to a mod
 ---@param mod_id string The ID of the mod.
 ---@param string_data string The string data to pass into the mod.
 function mod_callback(mod_id, string_data) end
 
 ---Removes all pickups from the world
+---@see add_pickup
 function remove_pickups() end
 
 ---Sets the seed to be used for random number generation

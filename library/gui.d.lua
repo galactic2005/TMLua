@@ -3,11 +3,13 @@
 ---Displays an input field and yields for player string input.
 ---@param header_text? string The text shown on the header of the Input. Omit for no header.
 ---@return string # The input from the player.
+---@see input_num
 function input(header_text) end
 
 ---Displays an input field and yields for player number input.
 ---@param header_text? string The text shown on the header of the Input. Omit for no header.
 ---@return number # The input from the player.
+---@see input
 function input_num(header_text) end
 
 ---Displays a message box and yields for player selection input.

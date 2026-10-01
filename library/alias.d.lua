@@ -19,7 +19,7 @@
 ---| `"target"` # The actor who was the result of the most recent successful intersection.
 ---| `"default"` # The actor that activated the script.
 
----@alias cursor_face_number integer
+---@alias cursor_face_integer integer
 ---| `0` # No face (cursor is not on a block.)
 ---| `1` # The Left/West face.
 ---| `2` # The Forward/Noth face.
@@ -47,6 +47,11 @@
 ---| `"ButtonX"` # The event script triggered by the X Button.
 ---| `"ButtonY"` # The event script triggered by the Y Button.
 ---| `"ButtonB"` # The event script triggered by the B Button.
+
+---@alias item_equip_slot_string string
+---| `"left"` # The Item Slot of the actor's left hand.
+---| `"right"` # The Item Slot of the actor's right hand.
+---| `"body"` # The appropiate Item Slot for the item (Rings, for example, are equipped in the RightSide slot.)
 
 ---@alias item_data_slot_string string
 ---| `"item"` # The Item Slot of ItemEquip, ItemUnequip and ItemSwing events.
@@ -328,3 +333,12 @@
 ---| `"ZombiePain"` # The sound effect used when a Zombie Actor gets hurt.
 ---| `"ZombieStrike"` # An unused sound effect used when a Zombie Actor strikes a target.
 ---| `"ZombieWarning"` # An unused sound effect used when a Zombie Actor warns a target.
+
+---@alias weekday_integer integer
+---| `0` # Sunday
+---| `1` # Monday
+---| `2` # Tuesday
+---| `3` # Wednesday
+---| `4` # Thursday
+---| `5` # Friday
+---| `6` # Saturday

@@ -6,6 +6,18 @@
 ---@see get_active_texture_id
 function add_active_texture(block_id, block_id_texture) end
 
+---Adds a flying block at the coordinate
+---@param x any
+---@param y any
+---@param z any
+---@param block_id any
+---@param velocity_x any
+---@param velocity_y any
+---@param velocity_z any
+---@param gravity any
+---@param break_chance any
+function add_flying_block(x, y, z, block_id, velocity_x, velocity_y, velocity_z, gravity, break_chance) end
+
 ---Clears the block at the coordinate (sets to block.none)
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
@@ -14,7 +26,7 @@ function clear_block(x, y, z) end
 
 ---Copies a block from one coordinate to another
 ---
----Block data is removed from the second coordinate
+---All block data is removed from the second coordinate
 ---@param x1 integer X position of the block to copy.
 ---@param y1 integer Y position of the block to copy.
 ---@param z1 integer Z position of the block to copy.
@@ -45,6 +57,14 @@ function get_aux(x, y, z) end
 ---@return integer # The Block ID of the block.
 function get_block(x, y, z) end
 
+---Gets the Block Info of a block
+---@param x integer X position of the block.
+---@param y integer Y position of the block.
+---@param z integer Z position of the block.
+---@return table
+---@see is_block_info
+function get_block_info(x, y, z) end
+
 ---Gets the light emitted by blocks (Block Light) at a position
 ---
 ---Light level is a number between 0 (no light) and 15 (maximum light)
@@ -61,6 +81,12 @@ function get_block_light(x, y, z) end
 ---@return integer # The Texture ID of the block.
 ---@see set_texture
 function get_texture(x, y, z) end
+
+---Returns if the table provided is a Block Info table
+---@param t table The table to check for Block Info metadata
+---@return boolean # `true` if the table provided is a Block Info table.
+---@see get_block_info
+function is_block_info(t) end
 
 ---Moves a block from one coordinate to another
 ---

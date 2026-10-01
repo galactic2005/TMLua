@@ -2,13 +2,11 @@
     "name": "TMLua Addon",
 
     "settings": {
-        "Lua.runtime.version" : "LuaJIT",
-        "Lua.diagnostics.globals" : [
-            "global1",
-            "global2"
-        ],
+        "Lua.runtime.version" : "Lua 5.4",
         "Lua.runtime.builtin" : {
-            "io" : "disable"
+            "debug" : "disable",
+            "io" : "disable",
+            "os" : "disable"
         }
     }
 }

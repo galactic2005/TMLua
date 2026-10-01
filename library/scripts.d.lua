@@ -10,11 +10,18 @@ function exit() end
 ---Removes the script from an event
 ---@param event_type event_string
 ---@param item_id? integer The item'd IS for triggering an event. Required for the `ItemSwing`, `ItemEquip` and `ItemUnequip` events.
+---@see set_event_script
 function remove_event_script(event_type, item_id) end
 
 ---Executes a script synchronously
 ---@param script_name string The script to execute.
+---@see script_internal
 function script(script_name) end
+
+---Executes a script asynchronously
+---@param script_name string The script to execute.
+---@see script
+function script_internal(script_name) end
 
 ---Sets a script for an event within a block
 ---@param x integer X posiiton of the block.
@@ -38,5 +45,6 @@ function set_event_button_script(event_type, script_name, text, x, y, scale) end
 ---@param event_type event_string The event type for triggering.
 ---@param script_name string The script to execute when the event is triggered.
 ---@param item_id? integer The item's ID for triggering an event. Required for the `ItemSwing`, `ItemEquip` and `ItemUnequip` events.
+---@see remove_event_script
 ---@see set_event_button_script
 function set_event_script(event_type, script_name, item_id) end

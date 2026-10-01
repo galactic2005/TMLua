@@ -5,6 +5,11 @@
 ---@param is_enabled boolean If `true`, the item is enabled and can be obtained and used in the world
 function enable_item(item_id, is_enabled) end
 
+---Returns an equipped or event-execution item
+---@param item_source? item_data_slot_string The item slot to get the item from. Omit to return `get_item()` as a function.
+---@return function|integer # The item ID of the item; returns `0` if no item was associated with the `item_source`; returns `get_item()` if `item_source` wasn't defined.
+function get_item(item_source) end
+
 ---Returns the class of an item
 ---@param item_id integer The item ID to get the class from
 ---@return string # The class of the item.

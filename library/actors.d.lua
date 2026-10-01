@@ -7,7 +7,20 @@
 ---@param milliseconds? integer The time in milliseconds between each effect tick. Omit to make the effect last a single tick.
 ---@param duration? integer The time the effect is active for. Omit to make the effect last forever.
 ---@param effect_name? string The name of the health effect; used to remove it with `remove_effect`. Omit for no name.
+---@see add_health_effect_history
+---@see remove_effect
 function add_health_effect(points, milliseconds, duration, effect_name) end
+
+---Adds a Health Effect to the actor when a player history is present
+---
+---Note that Health Effects persist between deaths for players
+---@param points integer The amount of health to add or remove per effect tick.
+---@param history_key string The player's history key/name to check. If it's not equal to `0`, then the Health Effect is active.
+---@param milliseconds? integer The time in milliseconds between each effect tick. Omit to make the effect last a single tick.
+---@param effect_name? string The name of the health effect; used to remove it with `remove_effect`. Omit for no name.
+---@see add_health_effect
+---@see remove_effect
+function add_health_effect_history(points, history_key, milliseconds, effect_name) end
 
 ---Returns the amount of an action involving a block or item that actor has performed
 ---@param action_type action_count_string The type of action to query.
@@ -30,7 +43,7 @@ function get_actor_name() end
 function get_clan_name() end
 
 ---unc desc
----@return cursor_face_number
+---@return cursor_face_integer
 function get_cursor_face() end
 
 ---Returns the actor's current position (true position) at their eyes
