@@ -1,0 +1,34 @@
+---@meta
+
+---Emits a single particle
+---@param x number X position of the particle.
+---@param y number Y position of the particle.
+---@param z number Z position of the particle.
+---@param duration number The duration of the particle in blocks per seconds.
+---@param velocity_x number X velocity of the particle in blocks per second.
+---@param velocity_y number Y velocity of the particle in blocks per second.
+---@param velociy_z number Z velocity of the particle in blocks per second.
+---@param size_x number X size of the particle. `1` is the size of a full block.
+---@param size_y number Y size of the particle. `1` is the size of a full block.
+---@param size_z number Z size of the particle. `1` is the size of a full block.
+---@param ending_size_multiplier number The size multiplier of the particle at the end of its life. The particle's size tweens linearly into the size multiplier throughout its entire lifetime.
+---@param start_color_r integer How red the particle should start at a number between `0` to `255`.
+---@param start_color_g integer How green the particle should start at a number between `0` to `255`.
+---@param start_color_b integer How blue the particle should start at a number between `0` to `255`.
+---@param start_color_a integer How transparent (or the alpha) the particle should start at a number between `0` to `255`.
+---@param gravity number The amount of Y velocity subtracted per second.
+---@param rotation number The Y axis rotation per second in radians.
+---@param velocity_var_x number Variable X velocity of the particle in blocks per second. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param velocity_var_y number Variable Y velocity of the particle in blocks per second. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param velocity_var_z number Variable Z velocity of the particle in blocks per second. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param end_color_r integer How red the particle should end at a number between `0` to `255`.
+---@param end_color_g integer How green the particle should end at a number between `0` to `255`.
+---@param end_color_b integer How blue the particle should end at a number between `0` to `255`.
+---@param end_color_a integer How transparent (or the alpha) the particle should end at a number between `0` to `255`.
+---@param emit_pos_var_x number Variable X position of the particle. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param emit_pos_var_y number Variable Y position of the particle. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param emit_pos_var_z number Variable Z position of the particle. Variability is either added or subtracted and is varied from `0` to the number provided.
+---@param emit_pos_offset_x number X offset position of the particle.
+---@param emit_pos_offset_y number Y offset position of the particle.
+---@param emit_pos_offset_z number Z offset position of the particle.
+function add_particle(x, y, z, duration, velocity_x, velocity_y, velociy_z, size_x, size_y, size_z, ending_size_multiplier, start_color_r, start_color_g, start_color_b, start_color_a, gravity, rotation, velocity_var_x, velocity_var_y, velocity_var_z, end_color_r, end_color_g, end_color_b, end_color_a, emit_pos_var_x, emit_pos_var_y,  emit_pos_var_z, emit_pos_offset_x, emit_pos_offset_y, emit_pos_offset_z) end

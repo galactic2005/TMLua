@@ -11,8 +11,10 @@ function enable_item(item_id, is_enabled) end
 function get_item_class(item_id) end
 
 ---Returns the data of an item
----@param item_slot item_data_slot_string The item slot to get the data from. Use `item` in event scripts to get the item that triggered the event.
----@return ... # The data of the item.
+---
+---Returns `nil` if no data is associated with the item
+---@param item_slot item_data_slot_string The item slot to get the data from.
+---@return nil|table # The data of the item; returns `nil` if no data is associated with the item.
 function get_item_data(item_slot) end
 
 ---Returns the description of an item
