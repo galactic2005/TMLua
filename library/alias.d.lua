@@ -21,12 +21,12 @@
 
 ---@alias cursor_face_number integer
 ---| `0` # No face (cursor is not on a block.)
----| `1` # Left/West face.
----| `2` # Forward/Noth face.
----| `3` # Right/East face.
----| `4` # Backwards/South face.
----| `5` # Up/Top face.
----| `6` # Down/Bottom face.
+---| `1` # The Left/West face.
+---| `2` # The Forward/Noth face.
+---| `3` # The Right/East face.
+---| `4` # The Backwards/South face.
+---| `5` # The Up/Top face.
+---| `6` # The Down/Bottom face.
 
 ---@alias event_string string
 ---| `"PlayerJoin"` # The event script triggered when a player joins a world.
@@ -49,16 +49,16 @@
 ---| `"ButtonB"` # The event script triggered by the B Button.
 
 ---@alias item_data_slot_string string
----| `"item"`
----| `"lefthand"`
----| `"righthand"`
----| `"head"`
----| `"neck"`
----| `"body"`
----| `"leftside"`
----| `"rightside"`
----| `"legs"`
----| `"feet"`
+---| `"item"` # The Item Slot of ItemEquip, ItemUnequip and ItemSwing events.
+---| `"lefthand"` # The Item Slot of the actor's left hand.
+---| `"righthand"` # The Item Slot of the actor's right hand.
+---| `"head"` # The Item Slot where Helmets armor are equipped.
+---| `"neck"` #  The Item Slot where Amulets and Necklaces are equipped.
+---| `"body"` # The Item Slot where Bodies armor are equipped.
+---| `"leftside"` # The Item Slot where Gauntlets armor are equipped.
+---| `"rightside"` # The Item Slot where Ring are equipped.
+---| `"legs"` # The Item Slot where Leggings armor are equipped.
+---| `"feet"` # The Item Slot where Boots armor are equipped.
 
 ---@alias permission_string string
 ---| `"Adventure"` # Permits the player to:<ul><li>Use Economized Shops (though are unable to Econimize shops themselves.)</li><li>Collect pickups.</li><li>Use Bookcases, Unlocked Chests and Furnaces.</li></ul>This permission is enabled by default on new worlds for default permissions.
@@ -91,3 +91,240 @@
 ---| `"Farming"` # Determines which Hoes and Scythes can be used by the Player and which seeds can be planted on Tilled Earth.<br><br>The Farming skill is leveled up by creating or placing Tilled Earth, mining Crops and planting seeds.
 ---| `"Cooking"` # Determines which Food items can be cooked by the Player<br><br>The Cooking skill is leveled up by cooking items that require the Cooking skill.
 ---| `"Looting"`
+
+---@alias sound_effect_strings string
+---| `"9MM sten sub machine gun double shot close perspective_BLASTWAVEFX_17993"` # The sound effect used when shooting single-shot weapons, such as a Revolver.
+---| `"9MM sterling sub machine gun long burst close perspective_BLASTWAVEFX_18000"` # The sound effect used when shooting multi-shot weapons, such as a Spider SMG.
+---| `"ArcadeInsertCoin"` # The sound effect used when inserting Gold Pieces into an Arcade Machine block.
+---| `"Base"` # The sound effect used by Blocks or Items when they don't have a custom defined sound effect.
+---| `"Base1"` # The sound effect used by Blocks or Items when they don't have a custom defined sound effect.
+---| `"Base2"` # The sound effect used by Blocks or Items when they don't have a custom defined sound effect.
+---| `"Base3"` # The sound effect used by Blocks or Items when they don't have a custom defined sound effect.
+---| `"BodyHit"` # The sound effect used by Actors when they are hit by an attacker.
+---| `"BodyHit1"` # The sound effect used by Actors when they are hit by an attacker.
+---| `"BodyHit2"` # The sound effect used by Actors when they are hit by an attacker.
+---| `"BodyHit3"` # The sound effect used by Actors when they are hit by an attacker.
+---| `"BoneMealUse"` # An unused sound effect used when using Bone Meal.
+---| `"BookUse"` # The sound effect used when placing or using Books or flipping through Book pages.
+---| `"BoomArrowUse"` # The sound effect used when a Boom Arrow is shot by an Actor.
+---| `"BucketOfLavaUse"` # An unused sound effect used when using a Bucket Of Lava.
+---| `"BucketOfWaterUse"` # An unused sound effect used when using a Bucket Of Water.
+---| `"CameraUse"` # The sound effect used when a Camera is used by an Actor.
+---| `"CowDeath"` # The sound effect used when an Ayrshire Cow or Highland Cow Actor dies.
+---| `"CowPain"` # The sound effect used when an Ayrshire Cow or Highland Cow Actor gets hurt.
+---| `"CowWarning"` # An unused sound effect used when an Ayrshire Cow or Highland Cow Actor warns a target.
+---| `"DiabloDeath"` # The sound effect used when a Diablo Actor dies.
+---| `"DiabloPain"` # The sound effect used when a Diablo Actor gets hurt.
+---| `"DiabloStrike"` # An unused sound effect used when a Diablo Actor strikes a target.
+---| `"DryadDeath"` # The sound effect used when a Dryad Actor dies.
+---| `"DryadPain"` # The sound effect used when a Dryad Actor gets hurt.
+---| `"DuckDeath"` # The sound effect used when a Duck Actor dies.
+---| `"DuckPain"` # The sound effect used when a Duck Actor gets hurt.
+---| `"EnvCaveIn"` # The sound effect used by Cave-Ins.
+---| `"EnvExplosion"` # The sound effect used by explosions.
+---| `"EnvFireball"` # The sound effect used by Actors when they become on fire by any source.
+---| `"EnvHail"` # The sound effect used by Hail.
+---| `"EnvLava"` # The sound effect emiited by Lava.
+---| `"EnvNightfall"` # The sound effect used when night falls in a World.
+---| `"FireArrowUse"` # The sound effect used when a Fire Arrow is shot by an Actor.
+---| `"GenPickup"` # The sound effect used when collecting a Pickup.
+---| `"GoblinDeath"` # The sound effect used when a Goblin Actor dies.
+---| `"GoblinPain"` # The sound effect used when a Goblin Actor gets hurt.
+---| `"GoblinWarning"` # An unused sound effect used when a Goblin Actor warns a target.
+---| `"GoldPiecesUse"` # The sound effect used when purchasing items from a Block Shop or Item Shop.
+---| `"GrenadeLauncherUse"` # The sound effect used when a Grenade Launcher is used by an Actor.
+---| `"GrenadeLauncherUseFail"` # The sound effect used when a Grenade Launcher is tried by an Actor but failed due to having no Grenades.
+---| `"GuiAccept"` # The sound effect used in menus when accepting an action.
+---| `"GuiCancel"` # The sound effect used in menus when canceling an action.
+---| `"GuiGamerJoined"` # The sound effect used when a Player joins the World.
+---| `"GuiInvalid"` # The sound effect used in menus when accepting or selecting an action that cannot be accepted or selected.
+---| `"GuiMoveCursor"` # The sound effect used in the Old Menu when switching options.
+---| `"GuiSelect"` # The sound effect used in menus when selecting an action.
+---| `"GuiTransfer"` # The sound effect used in menus when transferring items or options.
+---| `"GuiTxtMsgIn"` # The sound effect used when a Text Message appears on-screen.
+---| `"GunLaser"` # The sound effect used when shooting laser weapons, such as a Laser Blaster.
+---| `"GunMachine"` # The sound effect used when shooting multi-shot weapons, such as a Spider SMG.
+---| `"GunSingle"` # The sound effect used when shooting single-shot weapons, such as a Revolver.
+---| `"IceArrowUse"` # The sound effect used when an Ice Arrow is shot by an Actor.
+---| `"ItemActivate"` # The sound effect used when placing or using Buttons or Switches.
+---| `"ItemActivate1"` # The sound effect used when placing or using Buttons or Switches.
+---| `"ItemArmor"` # The sound effect used when an Actor's armor (excluding Leather and Troll Hide) negates damage.
+---| `"ItemArmor1"` # The sound effect used when an Actor's armor (excluding Leather and Troll Hide) negates damage.
+---| `"ItemBow"` # The sound effect used when a Bow is used by an Actor.
+---| `"ItemBow1"` # The sound effect used when a Bow is used by an Actor.
+---| `"ItemCooked"` # The sound effect used when a cooked Food item is eaten by an Actor.
+---| `"ItemCooked1"` # The sound effect used when a cooked Food item is eaten by an Actor.
+---| `"ItemCrop"` # The sound effect used when interacting with Crops or eating certain foods.
+---| `"ItemCrop1"` # The sound effect used when interacting with Crops or eating certain foods.
+---| `"ItemDiamantiumTool"` # The sound effect used when swinging Diamantium Tools and Weapons.
+---| `"ItemDiamantiumTool1"` # The sound effect used when swinging Diamantium Tools and Weapons.
+---| `"ItemDiamondTool"` # The sound effect used when swinging Diamond Tools and Weapons.
+---| `"ItemDiamondTool1"` # The sound effect used when swinging Diamond Tools and Weapons.
+---| `"ItemDoorUse"` # The sound effect used when placing or opening Doors or Trapdoors.
+---| `"ItemEarth"` # The sound effect used when mining, placing, or walking on earthy blocks (such as Dirt or Tilled Earth.)
+---| `"ItemEarth1"` # The sound effect used when mining, placing, or walking on earthy blocks (such as Dirt or Tilled Earth.)
+---| `"ItemEarth2"` # The sound effect used when mining, placing, or walking on earthy blocks (such as Dirt or Tilled Earth.)
+---| `"ItemFire"` # The sound effect used when mining or placing Fire, or successfully starting a Fire with a Lighter.
+---| `"ItemFire1"` # The sound effect used when mining or placing Fire, or successfully starting a Fire with a Lighter.
+---| `"ItemFlora"` # The sound effect used when mining, placing, or walking on flora blocks (such as Climbing Ivy, Leaves or Long Grass.)
+---| `"ItemFlora2"` # The sound effect used when mining, placing, or walking on flora blocks (such as Climbing Ivy, Leaves or Long Grass.)
+---| `"ItemGem"` # The sound effect used when mining, placing, or walking on gem blocks (such as Diamond or Ruby.)
+---| `"ItemGem1"` # The sound effect used when mining, placing, or walking on gem blocks (such as Diamond or Ruby.)
+---| `"ItemGlass"` # The sound effect used when placing or walking on glass blocks (such as Arcade Machines, Glass, or Sunboxes.)
+---| `"ItemGlass1"` # The sound effect used when placing or walking on glass blocks (such as Arcade Machines, Glass, or Sunboxes.)
+---| `"ItemGlass2"` # The sound effect used when placing or walking on glass blocks (such as Arcade Machines, Glass, or Sunboxes.)
+---| `"ItemGlassBreak"` # The sound effect used when mining glass blocks (such as Arcade Machines, Glass, or Sunboxes.)
+---| `"ItemGlassBreak1"` # The sound effect used when mining glass blocks (such as Arcade Machines, Glass, or Sunboxes.)
+---| `"ItemGrass"` # The sound effect used when mining, placing or walking on grassy blocks (such as Cover Blocks or Grass.)
+---| `"ItemGrass1"` # The sound effect used when mining, placing or walking on grassy blocks (such as Cover Blocks or Grass.)
+---| `"ItemGreenstoneTool"` # The sound effect used when swinging Greenstone Gold Tools and Weapons.
+---| `"ItemGreenstoneTool1"` # The sound effect used when swinging Greenstone Gold Tools and Weapons.
+---| `"ItemIronTool"` # The sound effect used when swinging Iron Tools and Weapons.
+---| `"ItemIronTool1"` # The sound effect used when swinging Iron Tools and Weapons.
+---| `"ItemJewelry"` # The sound effect used when swinging a Jewlery item.
+---| `"ItemJewelry1"` # The sound effect used when swinging a Jewlery item.
+---| `"ItemKey"` # An unused sound effect used when unlocking a Locked Door with a Key.
+---| `"ItemLava"` # The sound effect used when using a Bucket Of Lava.
+---| `"ItemLava1"` # The sound effect used when using a Bucket Of Lava.
+---| `"ItemLeather"` # The sound effect used when swinging Leather or Troll Hide items or when an Actor's Leather or Troll Hide armor negates damage.
+---| `"ItemMetal"` # The sound effect used when mining, placing or walking on metal blocks (such as Steel Plating or Steel Portcullis.)
+---| `"ItemMetal1"` # The sound effect used when mining, placing or walking on metal blocks (such as Steel Plating or Steel Portcullis.)
+---| `"ItemMetal2"` # The sound effect used when mining, placing or walking on metal blocks (such as Steel Plating or Steel Portcullis.)
+---| `"ItemOre"` # The sound effect used when mining, placing or walking on ore blocks (such as Carbon or Iron.)
+---| `"ItemOre1"` # The sound effect used when mining, placing or walking on ore blocks (such as Carbon or Iron.)
+---| `"ItemPorous"` # The sound effect used when mining, placing or walking on porous blocks (such as Cactus or Scoria.)
+---| `"ItemPorous1"` # The sound effect used when mining, placing or walking on porous blocks (such as Cactus or Scoria.)
+---| `"ItemRareTool"` # The sound effect used when swinging or using Rare items (except for the Battle Axe and Elven Bow.)
+---| `"ItemRaw"` # The sound effect used when a raw Food item is swung by an Actor.
+---| `"ItemRaw1"` # The sound effect used when a raw Food item is swung by an Actor.
+---| `"ItemRock"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRock1"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRock2"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRock3"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRock4"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRock5"` # The sound effect used when mining, placing or walking on rock or polished rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemRope"` # The sound effect used when mining, placing or walking on Rope blocks.
+---| `"ItemRope1"` # The sound effect used when mining, placing or walking on Rope blocks.
+---| `"ItemRubyTool"` # The sound effect used when swinging Ruby Tools and Weapons.
+---| `"ItemRubyTool1"` # The sound effect used when swinging Ruby Tools and Weapons.
+---| `"ItemSand"` # The sound effect used when mining, placing or walking on Sand blocks.
+---| `"ItemSand1"` # The sound effect used when mining, placing or walking on Sand blocks.
+---| `"ItemSand2"` # The sound effect used when mining, placing or walking on Sand blocks.
+---| `"ItemSandWalk"` # The sound effect used when walking on Sand blocks.
+---| `"ItemShield"` # The sound effect used when an Actor's shield (except for the Shield Badge) negates damage.
+---| `"ItemShield1"` # The sound effect used when an Actor's shield (except for the Shield Badge) negates damage.
+---| `"ItemShieldDeflect"` # The sound effect used when an Actor's shield deflects (Cyan damage indicator.)
+---| `"ItemSkillUse"` # An unused sound effect used for either leveling skills or using the Skill items.
+---| `"ItemSnow"` # The sound effect used when mining, placing or walking on Snow or Snow Layer blocks.
+---| `"ItemSnow1"` # The sound effect used when mining, placing or walking on Snow or Snow Layer blocks.
+---| `"ItemSpecial"` # An unused sound effect used for special items.
+---| `"ItemSpecial1"` # An unused sound effect used for special items.
+---| `"ItemSpecial2"` # An unused sound effect used for special items.
+---| `"ItemSteelTool"` # The sound effect used when swinging Steel Tools and Weapons.
+---| `"ItemSteelTool1"` # The sound effect used when swinging Steel Tools and Weapons.
+---| `"ItemStone"` # The sound effect used when mining, placing or walking on stone blocks (such as Clay, Cobblestone or Particle Emitters.) It's also used when stepping on rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemStone1"` # The sound effect used when mining, placing or walking on stone blocks (such as Clay, Cobblestone or Particle Emitters.) It's also used when stepping on rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemStone2"` # The sound effect used when mining, placing or walking on stone blocks (such as Clay, Cobblestone or Particle Emitters.) It's also used when stepping on rock blocks (such as Basalt, Gabbro or Polished Tuff.)
+---| `"ItemTile"` # The sound effect used when mining, placing or walking on tiled blocks (such as Blue Boxes, Checkered or White Tiles.) It's also used when stepping on rock blocks (such as Basalt) and when mining, placing or walking on stone blocks (such as Cobblestone.)
+---| `"ItemTile1"` # The sound effect used when mining, placing or walking on tiled blocks (such as Blue Boxes, Checkered or White Tiles.) It's also used when stepping on rock blocks (such as Basalt) and when mining, placing or walking on stone blocks (such as Cobblestone.)
+---| `"ItemTitaniumTool"` # The sound effect used when swinging Titanium Tools and Weapons.
+---| `"ItemTitaniumTool1"` # The sound effect used when swinging Titanium Tools and Weapons.
+---| `"ItemTree"` # The sound effect used when mining, placing, or walking on Wood or Birch Wood blocks.
+---| `"ItemTree1"` # The sound effect used when mining, placing, or walking on Wood or Birch Wood blocks.
+---| `"ItemTree2"` # The sound effect used when mining, placing, or walking on Wood or Birch Wood blocks.
+---| `"ItemWater"` # The sound effect used when swimming or placing Water with Buckets Of Water.
+---| `"ItemWater1"` # The sound effect used when swimming or placing Water with Buckets Of Water.
+---| `"ItemWood"` # The sound effect used when mining, placing, or walking on wood blocks (such as Crates or Wood Planks)
+---| `"ItemWood1"` # The sound effect used when mining, placing, or walking on wood blocks (such as Crates or Wood Planks)
+---| `"ItemWood2"` # The sound effect used when mining, placing, or walking on wood blocks (such as Crates or Wood Planks)
+---| `"ItemWoodTool"` # The sound effect used when swinging Wood Tools and Weapons.
+---| `"ItemWoodTool1"` # The sound effect used when swinging Wood Tools and Weapons.
+---| `"ItemWool"` # The sound effect used when mining, placing, or walking on soft or wooly blocks (such as Beds, Clouds, or White Wool.)
+---| `"ItemWool1"` # The sound effect used when mining, placing, or walking on soft or wooly blocks (such as Beds, Clouds, or White Wool.)
+---| `"LighterUse"` # The sound effect used when an Actor attempts to start a Fire with a Lighter.
+---| `"MobPlaceHolder"` # An unused sound effect for mobs.
+---| `"Monster1"` # An unused sound effect for a monster.
+---| `"OrcDeath"` # The sound effect used when an Orc Actor dies.
+---| `"OrcPain"` # The sound effect used when an Orc Actor gets hurt.
+---| `"OrcStrike"` # An unused sound effect used when an Orc Actor strikes a target.
+---| `"PlayerFemalePain"` # The sound effect used when a female human Actor gets hurt.
+---| `"PlayerPain"` # The sound effect used when a male human Actor gets hurt.
+---| `"s001_Birds"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Birds" ambient sound.
+---| `"s002_CaveWaterLight"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Light Cave Water" ambient sound.
+---| `"s003_CaveWaterMedium"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Medium Cave Water" ambient sound.
+---| `"s004_Dungeon"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Dungeon" ambient sound.
+---| `"s005_Factory"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Factory" ambient sound.
+---| `"s006_Forest"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Forest" ambient sound.
+---| `"s007_GentleSeaOnBeach"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Gentle Sea on Beach" ambient sound.
+---| `"s008_Stream"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Stream" ambient sound.
+---| `"s009_Meadow"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Meadow" ambient sound.
+---| `"s010_RainOrWaterfall"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Rain or Waterfall" ambient sound.
+---| `"s011_Brook"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Brook" ambient sound.
+---| `"s012_Wind"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Wind" ambient sound.
+---| `"s013_TumbleWeedWind"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Tumbleweed Wind" ambient sound.
+---| `"s014_GearAndWinch"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Gear and Winch" ambient sound.
+---| `"s015_TownBells"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Town Bells" ambient sound.
+---| `"s016_Blacksmith"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Blacksmith" ambient sound.
+---| `"s017_BoilingWater"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Boiling Water" ambient sound.
+---| `"s018_MarshAtNight"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Marsh at Night" ambient sound.
+---| `"s019_Timer"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Timer" ambient sound.
+---| `"s020_Fire"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Fire" ambient sound and is also emiited by Fires.
+---| `"s021_Rooster"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Rooster" ambient sound.
+---| `"s022_Mechanical"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Mechanical" ambient sound.
+---| `"s023_Alien Drone"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Alien Drone" ambient sound.
+---| `"s024_Eerie Squalls"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Eerie Squalls" ambient sound.
+---| `"s025_TrafficJam"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Traffic Jam" ambient sound.
+---| `"s026_StressedMetal"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Stressed Metal" ambient sound.
+---| `"s027_SmallFarm"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Small Farm" ambient sound.
+---| `"s028_Snoring"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Snoring" ambient sound.
+---| `"s029_InsectBuzz"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Insect Buzz" ambient sound.
+---| `"s030_NuclearMeltdown"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Nuclear Meltdown" ambient sound.
+---| `"s031_NoisyCrowd"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Noisy Crowd" ambient sound.
+---| `"s032_HighAlert"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "High Alert" ambient sound.
+---| `"s033_DangerImminent"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Danger Imminent" ambient sound.
+---| `"s034_DoorBell"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Door Bell" ambient sound.
+---| `"s035_Thunder"` # The sound effect used in Ambient Sound Blocks or TMScripts as the "Thunder" ambient sound.
+---| `"s036_Piano A"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s037_Piano B"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s038_Piano Bb"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s039_Piano C"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s040_Piano C Sharp"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s041_Piano D"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s042_Piano E"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s043_Piano Eb"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s044_Piano F"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s045_Piano F Sharp"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s047_Piano G Sharp"` # An unused sound effect for Ambient Sound Blocks.
+---| `"s048_Note Do"` # The sound effect used in Ambient Sound Blocks as the "Note Do" ambient sound.
+---| `"s049_Note Re"` # The sound effect used in Ambient Sound Blocks as the "Note Re" ambient sound.
+---| `"s050_Note Mi"` # The sound effect used in Ambient Sound Blocks as the "Note Mi" ambient sound.
+---| `"s051_Note Fa"` # The sound effect used in Ambient Sound Blocks as the "Note Fa" ambient sound.
+---| `"s052_Note So"` # The sound effect used in Ambient Sound Blocks as the "Note So" ambient sound.
+---| `"s053_Note La"` # The sound effect used in Ambient Sound Blocks as the "Note La" ambient sound.
+---| `"s054_Note Ti"` # The sound effect used in Ambient Sound Blocks as the "Note Ti" ambient sound.
+---| `"SheepDeath"` # The sound effect used when a Sheep Actor dies.
+---| `"SheepPain"` # The sound effect used when a Sheep Actor gets hurt.
+---| `"SheepStrike"` # An unused sound effect used when a Sheep Actor strikes a target.
+---| `"SheepWarning"` # An unused sound effect used when a Sheep Actor warns a target.
+---| `"SkeletonDeath"` # An unused sound effect used when a Skeleton Actor dies.
+---| `"SkeletonPain"` # An unused sound effect used when a Skeleton Actor gets hurt.
+---| `"SkeletonWarning"` # An unused sound effect used when a Skeleton Actor warns a target.
+---| `"Sound design element laser gun beam blaster shot multiple rapid fireBLASTWAVEFX_07289"` # The sound effect used when shooting laser weapons, such as a Laser Blaster.
+---| `"SpiderDeath"` # The sound effect used when a Spider Actor dies.
+---| `"SpiderPain"` # The sound effect used when a Spider Actor gets hurt.
+---| `"SpiderStrike"` # An unused sound effect used when a Spider Actor strikes a target.
+---| `"SpiderWarning"` # An unused sound effect used when a Spider Actor warns a target.
+---| `"TeleportKeyUse"` # An unused sound effect used when using a Teleport Key.
+---| `"TeleportUse"` # The sound effect used when an Actor begins teleporting with an Obsidian block or an Obsidian Shard.
+---| `"TesterMan"` # The sound effect used when a Player becomes TesterMan.
+---| `"TorchUse"` # The sound effect used when placing Torches.
+---| `"TrollDeath"` # The sound effect used when a Troll Actor dies.
+---| `"TrollPain"` # The sound effect used when a Troll Actor gets hurt.
+---| `"TrollStrike"` # An unused sound effect used when a Troll Actor strikes a target.
+---| `"WerewolfDeath"` # The sound effect used when a Werewolf Actor dies or gets hurt.
+---| `"WerewolfStrike"` # An unused sound effect used when a Werewolf Actor strikes or warns a target.
+---| `"ZeusHit"` # An unused sound effect for Zeus.
+---| `"ZombieDeath"` # The sound effect used when a Zombie Actor dies.
+---| `"ZombiePain"` # The sound effect used when a Zombie Actor gets hurt.
+---| `"ZombieStrike"` # An unused sound effect used when a Zombie Actor strikes a target.
+---| `"ZombieWarning"` # An unused sound effect used when a Zombie Actor warns a target.
