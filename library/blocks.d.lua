@@ -61,7 +61,7 @@ function get_block(x, y, z) end
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
 ---@param z integer Z position of the block.
----@return table
+---@return block_info
 ---@see is_block_info
 function get_block_info(x, y, z) end
 
@@ -85,6 +85,7 @@ function get_texture(x, y, z) end
 ---Returns if the table provided is a Block Info table
 ---@param t table The table to check for Block Info metadata
 ---@return boolean # `true` if the table provided is a Block Info table.
+---@see block_info
 ---@see get_block_info
 function is_block_info(t) end
 
