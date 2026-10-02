@@ -91,6 +91,12 @@ function import() end
 ---@see is_random
 function is_chance(chance, chances) end
 
+---Returns if the table provided is a color table
+---@param t table The table to check for color metadata
+---@return boolean # `true` if the table provided is a color table.
+---@see color
+function is_color(t) end
+
 ---Returns the result of a random roll of `chance` out of `chances`
 ---@param chance integer The value that the roll is required to be lesser than or equal to for the function to return `true`.
 ---@param chances integer The range of numbers rolled between `1` and `chances`.
@@ -101,13 +107,21 @@ function is_random(chance, chances) end
 ---Returns if the table provided is a udim2 table
 ---@param t table The table to check for udim2 metadata
 ---@return boolean # `true` if the table provided is a udim2 table.
+---@see udim2
 function is_udim2(t) end
 
 ---Returns if the table provided is a UTC table
 ---@param t table The table to check for UTC metadata
 ---@return boolean # `true` if the table provided is a UTC table.
 ---@see get_utc
+---@see utc_table
 function is_utc_table(t) end
+
+---Returns if the table provided is a vec3 table
+---@param t table The table to check for vec3 metadata
+---@return boolean # `true` if the table provided is a vec3 table.
+---@see vec3
+function is_vec3(t) end
 
 ---Passes `string_data` to a mod
 ---@param mod_id string The ID of the mod.
