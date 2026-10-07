@@ -61,7 +61,7 @@ function get_block(x, y, z) end
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
 ---@param z integer Z position of the block.
----@return block_info
+---@return block_info # The Block Info of the block.
 ---@see is_block_info
 function get_block_info(x, y, z) end
 

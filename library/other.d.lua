@@ -117,6 +117,12 @@ function is_udim2(t) end
 ---@see utc_table
 function is_utc_table(t) end
 
+---Returns if the table provided is a vec2 table
+---@param t table The table to check for vec2 metadata
+---@return boolean # `true` if the table provided is a vec2 table.
+---@see vec2
+function is_vec2(t) end
+
 ---Returns if the table provided is a vec3 table
 ---@param t table The table to check for vec3 metadata
 ---@return boolean # `true` if the table provided is a vec3 table.

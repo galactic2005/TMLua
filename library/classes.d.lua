@@ -352,12 +352,75 @@ utc_table.weekday = nil
 
 ---This library provides Vector2 functions for 2D coordinates
 ---@class vec2 : table
-vec2 = {}
+vec2 = { }
 vec2.__index = vec2
+
+setmetatable(vec2, {
+    ---Returns a new vec2
+    ---@param x? number The X position. Omit for `0`.
+    ---@param y? integer The Y position. Omit for `0`.
+    ---@return vec2
+    __call = function(self, x, y) end
+})
+
+---Returns a new vec2
+---@param x? number The X position. Omit for `0`.
+---@param y? integer The Y position. Omit for `0`.
+---@return vec2
+function vec2(x, y) end
+
+---Returns a new vec2
+---@param x? number The X position. Omit for `0`.
+---@param y? integer The Y position. Omit for `0`.
+---@return vec2
+function vec2.new(x, y) end
+
+---The X position of the vec2
+---@type number
+vec2.x = nil
+
+---The Y position of the vec2
+---@type number
+vec2.y = nil
+
+---Returns a string representing the vec2
+---@return string # The vec2 as a string.
+function vec2:__tostring() end
+
+---Returns a vec2 where both `lhs` and `rhs` are added together
+---@param lhs vec2 The vec2 to add to.
+---@param rhs vec2 The vec2 to add with.
+---@return vec2 # The vec2 after adding both `lhs` and `rhs` together.
+function vec2.__add(lhs, rhs) end
+
+---Returns a vec2 where `lhs` is subtracted from `rhs`
+---@param lhs vec2 The vec2 to subtract from.
+---@param rhs vec2 The vec2 to subtract with.
+---@return vec2 # The vec2 after subtracting `rhs` from `lhs`.
+function vec2.__sub(lhs, rhs) end
+
+---Returns a vec2 where `lhs` is multiplied with `rhs`
+---
+---Errors if both sides are not a vec2 type
+---@param lhs number|vec2 The left side to multiply. Can be either a `number` or vec2.
+---@param rhs number|vec2 The right side to multiply. Can be either a `number` or vec2.
+---@return vec2 # The vec2 after multiplying `rhs` and `lhs` together.
+function vec2.__mul(lhs, rhs) end
+
+---Returns a negated vec2
+---@param t vec2 The vec2 to negate.
+---@return vec2 # The negated vec2.
+function vec2.__unm(t) end
+
+---Checks if two vec2 values are equal
+---@param lhs vec2 First vec2.
+---@param rhs vec2 Second vec2.
+---@return boolean # `true` if both vec2 values are equal.
+function vec2.__eq(lhs, rhs) end
 
 ---This library provides Vector3 functions for 3D coordinates
 ---@class vec3 : table
-vec3 = {}
+vec3 = { }
 vec3.__index = vec3
 
 setmetatable(vec3, {
