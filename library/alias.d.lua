@@ -342,3 +342,8 @@
 ---| `4` # Thursday
 ---| `5` # Friday
 ---| `6` # Saturday
+
+---@alias zone_builder_type_string string
+---| `Player` # The context player.
+---| `Clan` # The context player's clan.
+---| `None` # No builder for this zone.
