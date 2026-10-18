@@ -40,11 +40,34 @@ function get_actor_name() end
 ---
 ---Returns an empty string if the actor is not part of a clan
 ---@return string # The actor's clan name.
+---@see set_clan
 function get_clan_name() end
 
----unc desc
----@return cursor_face_integer
+---Returns the distance to the block the actor's cursor is targetting
+---
+---Returns `-1` if no block is targetted by the cursor
+---@return number # The distance to the targetted block; `-1` if no block is targetted.
+---@see get_cursor_face
+---@see get_cursor_point
+function get_cursor_distance() end
+
+---Returns the face/side of the block the actor's cursor is targetting
+---
+---Returns `0` if no block is targetted by the cursor
+---@return cursor_face_integer @ The integer representing the face of the block; `0` if no block is targetted.
+---@see get_cursor_distance
+---@see get_cursor_point
 function get_cursor_face() end
+
+---Returns the position of the block the actor's cursor is targetting
+---
+---Returns `0`, `0` and `0` if no block is targetted by the cursor
+---@return integer # X position of the targetted block; `0` if no block is targetted.
+---@return integer # Y position of the targetted block; `0` if no block is targetted.
+---@return integer # Z position of the targetted block; `0` if no block is targetted.
+---@see get_cursor_distance
+---@see get_cursor_face
+function get_cursor_point() end
 
 ---Returns the actor's current position (true position) at their eyes
 ---@return number # X position of the actor's eyes.
@@ -89,6 +112,14 @@ function get_oxygen_as_percent() end
 ---@see get_oxygen
 ---@see get_oxygen_as_percent
 function get_max_oxygen() end
+
+---Returns the position of where a block could be placed by the actor's cursor
+---
+---Returns `0`, `0` and `0` if no block is targetted by the cursor
+---@return integer # X position of the where a block could be placed; `0` if no block is targetted.
+---@return integer # Y position of the where a block could be placed; `0` if no block is targetted.
+---@return integer # Z position of the where a block could be placed; `0` if no block is targetted.
+function get_placement_point() end
 
 ---Returns the actor's current point (block position) at their feet
 ---@return integer # X point of the actor.
@@ -152,6 +183,7 @@ function set_behaviour(behaviour_name) end
 ---Sets the player's Clan
 ---@param clan_name string The name of the clan to set for the player.
 ---@param banner_id? integer The clan banner ID to display for the player in both their HUD and Nameplate. Omit for no clan banner.
+---@see get_clan_name
 function set_clan(clan_name, banner_id) end
 
 ---Sets the Dialog Tree for the actor

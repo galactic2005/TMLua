@@ -12,7 +12,19 @@ function input(header_text) end
 ---@see input
 function input_num(header_text) end
 
----Displays a message box and yields for player selection input.
+---Displays a menu and yields for player selection input
+---
+---Returns the button pressed in the form of an integer:
+---* `0` - No selection (Cancelled Menu)
+---* `1` - Header
+---
+---Continuing upwards with each new text button (`2` for the first button, `3` for the second button, and so on)
+---@param header_text string The text shown on the Header button.
+---@param ... any The data to pass into the menu. If the first item is a `boolean` value, it's treated as the `no_cancel` option for the menu. If a `table` is passed in, all of its indexed contents is converted into a string.
+---@return integer # The button pressed.
+function menu(header_text, ...) end
+
+---Displays a message box and yields for player selection input
 ---
 ---Returns the button pressed in the form of an integer:
 ---* `0` - No selection (Cancelled Menu)
@@ -27,10 +39,9 @@ function input_num(header_text) end
 ---@param y_text string The text shown on the Y button. Leave as blank string to make the button disappear.
 ---@param b_text string The text shown on the B button. Leave as blank string to make the button disappear.
 ---@param is_vertical boolean If `true`, then the menu will be displayed vertically.
----@param is_no_cancel boolean If `true`, then the menu will not display the cancel button, though it may be still cancelled out of using the player's controls.
----@return integer # The button pressed.
+---@param is_no_cancel boolean If `true`, then the menu will not display the cancel button.
+---@return msgbox_integer # The button pressed.
 function msgbox(header_text, body_text, a_text, x_text, y_text, b_text, is_vertical, is_no_cancel) end
-
 
 ---Creates an in-game Notification
 ---@param ... any The data to pass into the notification. If the data isn't a string, it'll be converted into one.

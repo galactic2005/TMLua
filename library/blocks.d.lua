@@ -7,15 +7,17 @@
 function add_active_texture(block_id, block_id_texture) end
 
 ---Adds a flying block at the coordinate
----@param x any
----@param y any
----@param z any
----@param block_id any
----@param velocity_x any
----@param velocity_y any
----@param velocity_z any
----@param gravity any
----@param break_chance any
+---
+---Flying blocks deal damage baesd on their current velocity (the faster they are the more damage they do) and if they do not break or hit a target they leave a block of the associated Block ID.
+---@param x integer X position of the flying block.
+---@param y integer Y position of the flying block.
+---@param z integer Z position of the flying block.
+---@param block_id integer The Block ID of the fying block.
+---@param velocity_x number Starting X velocity of the flying block.
+---@param velocity_y number Starting Y velocity of the flying block.
+---@param velocity_z number Starting Z velocity of the flying block.
+---@param gravity number The gravity multiplier of the block (influences Y velocity over time.)
+---@param break_chance number The chance the block will break upon landing as a percentage (a number between 0 to 1.)
 function add_flying_block(x, y, z, block_id, velocity_x, velocity_y, velocity_z, gravity, break_chance) end
 
 ---Clears the block at the coordinate (sets to block.none)
@@ -35,7 +37,7 @@ function clear_block(x, y, z) end
 ---@param z2 integer Z position of where to copy the block to.
 function copy_block(x1, y1, z1, x2, y2, z2) end
 
----Gets the Texture ID of a particular block within a retexturable block
+---Returns the Texture ID of a particular block within a retexturable block
 ---
 ---Returns `0` if the texture wasn't found
 ---@param block_id integer The Block ID to get the Texture ID from.
@@ -43,21 +45,21 @@ function copy_block(x1, y1, z1, x2, y2, z2) end
 ---@see add_active_texture
 function get_active_texture_id(block_id, block_id_texture) end
 
----Gets the Aux Data of a block
+---Returns the Aux Data of a block
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
 ---@param z integer Z position of the block.
 ---@return integer # The Aux Data of the block.
 function get_aux(x, y, z) end
 
----Gets the Block ID of a block
+---Returns the Block ID of a block
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
 ---@param z integer Z position of the block.
 ---@return integer # The Block ID of the block.
 function get_block(x, y, z) end
 
----Gets the Block Info of a block
+---Returns the Block Info of a block
 ---@param x integer X position of the block.
 ---@param y integer Y position of the block.
 ---@param z integer Z position of the block.
@@ -65,7 +67,7 @@ function get_block(x, y, z) end
 ---@see is_block_info
 function get_block_info(x, y, z) end
 
----Gets the light emitted by blocks (Block Light) at a position
+---Returns the light emitted by blocks (Block Light) at a position
 ---
 ---Light level is a number between 0 (no light) and 15 (maximum light)
 ---@param x integer X position of the position.
@@ -74,7 +76,19 @@ function get_block_info(x, y, z) end
 ---@return integer # The Block Light level of the position.
 function get_block_light(x, y, z) end
 
----Gets the Texture ID of a retexturable block
+---Returns the text of a block that can be written on at a given index
+---
+---Books return the book title at index `0` and returns pages above index `0` (for example, use index `4` for Page 4)
+---
+---Signs return all text at index `0` and returns inidvidual lines between indexes `1` to `4` (for example, use index `3` for Line 3)
+---@param x integer X position of the block.
+---@param y integer Y position of the block.
+---@param z integer Z position of the block.
+---@param index integer The index to get text from
+---@return string # The text of a block
+function get_text(x, y, z, index) end
+
+---Returns the Texture ID of a retexturable block
 ---@param x integer X posiiton of the block.
 ---@param y integer Y posiiton of the block.
 ---@param z integer Z posiiton of the block.
@@ -99,6 +113,12 @@ function is_block_info(t) end
 ---@param y2 integer Y position of where to move the block to.
 ---@param z2 integer Z position of where to move the block to.
 function move_block(x1, y1, z1, x2, y2, z2) end
+
+---Opens a block
+---@param x integer X position of the block to open.
+---@param y integer Y position of the block to open.
+---@param z integer Z position of the block to open.
+function open_block(x, y, z) end
 
 ---Replaces certain blocks in a cubic region with another block
 ---@param x1 integer X position of the lower bound of the region.

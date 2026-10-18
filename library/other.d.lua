@@ -66,6 +66,16 @@ function get_npc_count_in_zone(zone_name, npc_type) end
 ---@return integer # The random number returned.
 function get_random(maximum) end
 
+---Returns a position randomly picked within a circle at a point
+---@param x number The X position of the circle.
+---@param y number The Y position of the circle.
+---@param z number The Z position of the circle.
+---@param radius number The maximum distance from the center of the circle for the random position.
+---@return number # The randomly picked X position of the circle.
+---@return number # The randomly picked Y position of the circle.
+---@return number # The randomly picked Z position of the circle.
+function get_random_pos(x, y, z, radius) end
+
 ---Returns the viewport's (the player's screen) height in pixels
 ---@return integer # The height of the viewport in pixels
 ---@see get_viewport_width
@@ -137,6 +147,13 @@ function mod_callback(mod_id, string_data) end
 ---Removes all pickups from the world
 ---@see add_pickup
 function remove_pickups() end
+
+---Loads a module from the `library` scripts folder into `_LOADED`
+---
+---Returns the loaded module
+---@param module_name string The name of the module to load from the `library` folder excluding the `_lua` filename.
+---@return table # The loaded module.
+function require(module_name) end
 
 ---Sets the seed to be used for random number generation
 ---@param seed integer The seed to be set.

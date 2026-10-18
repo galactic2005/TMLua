@@ -65,6 +65,13 @@
 ---| `"legs"` # The Item Slot where Leggings armor are equipped.
 ---| `"feet"` # The Item Slot where Boots armor are equipped.
 
+---@alias msgbox_integer integer
+---| `0` # No selection (cancelled input.)
+---| `1` # A Button
+---| `2` # X Button
+---| `3` # Y Button
+---| `4` # B Button
+
 ---@alias permission_string string
 ---| `"Adventure"` # Permits the player to:<ul><li>Use Economized Shops (though are unable to Econimize shops themselves.)</li><li>Collect pickups.</li><li>Use Bookcases, Unlocked Chests and Furnaces.</li></ul>This permission is enabled by default on new worlds for default permissions.
 ---| `"Creative"` #
