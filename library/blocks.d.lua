@@ -8,7 +8,7 @@ function add_active_texture(block_id, block_id_texture) end
 
 ---Adds a flying block at the coordinate
 ---
----Flying blocks deal damage baesd on their current velocity (the faster they are the more damage they do) and if they do not break or hit a target they leave a block of the associated Block ID.
+---Flying blocks deal damage baesd on their current velocity (the faster they are the more damage they do) and if they do not break or hit a target they leave a block of the associated Block ID
 ---@param x integer X position of the flying block.
 ---@param y integer Y position of the flying block.
 ---@param z integer Z position of the flying block.
@@ -27,8 +27,6 @@ function add_flying_block(x, y, z, block_id, velocity_x, velocity_y, velocity_z,
 function clear_block(x, y, z) end
 
 ---Copies a block from one coordinate to another
----
----All block data is removed from the second coordinate
 ---@param x1 integer X position of the block to copy.
 ---@param y1 integer Y position of the block to copy.
 ---@param z1 integer Z position of the block to copy.
@@ -36,6 +34,20 @@ function clear_block(x, y, z) end
 ---@param y2 integer Y position of where to copy the block to.
 ---@param z2 integer Z position of where to copy the block to.
 function copy_block(x1, y1, z1, x2, y2, z2) end
+
+---Cioues a region of blocks from one region to another
+---
+---Regions are placed starting at the lower bound at the coordinate
+---@param x1 integer X position of the lower bound of the region to copy.
+---@param y1 integer Y position of the lower bound of the region to copy.
+---@param z1 integer Z position of the lower bound of the region to copy.
+---@param x2 integer X position of the upper bound of the region to copy.
+---@param y2 integer Y position of the upper bound of the region to copy.
+---@param z2 integer Z position of the upper bound of the region to copy.
+---@param x3 integer X position of where to copy the region to starting from the lower bound.
+---@param y3 integer Y position of where to copy the region to starting from the lower bound.
+---@param z3 integer Z position of where to copy the region to starting from the lower bound.
+function copy_region(x1, y1, z1, x2, y2, z2, x3, y3, z3) end
 
 ---Returns the Texture ID of a particular block within a retexturable block
 ---
@@ -104,8 +116,6 @@ function get_texture(x, y, z) end
 function is_block_info(t) end
 
 ---Moves a block from one coordinate to another
----
----Block data is removed from the second coordinate
 ---@param x1 integer X position of the block to move.
 ---@param y1 integer Y position of the block to move.
 ---@param z1 integer Z position of the block to move.
@@ -114,11 +124,35 @@ function is_block_info(t) end
 ---@param z2 integer Z position of where to move the block to.
 function move_block(x1, y1, z1, x2, y2, z2) end
 
+---Moves a region of blocks from one region to another
+---
+---Regions are placed starting at the lower bound at the coordinate
+---@param x1 integer X position of the lower bound of the region to move.
+---@param y1 integer Y position of the lower bound of the region to move.
+---@param z1 integer Z position of the lower bound of the region to move.
+---@param x2 integer X position of the upper bound of the region to move.
+---@param y2 integer Y position of the upper bound of the region to move.
+---@param z2 integer Z position of the upper bound of the region to move.
+---@param x3 integer X position of where to move the region to starting from the lower bound.
+---@param y3 integer Y position of where to move the region to starting from the lower bound.
+---@param z3 integer Z position of where to move the region to starting from the lower bound.
+function move_region(x1, y1, z1, x2, y2, z2, x3, y3, z3) end
+
 ---Opens a block
 ---@param x integer X position of the block to open.
 ---@param y integer Y position of the block to open.
 ---@param z integer Z position of the block to open.
 function open_block(x, y, z) end
+
+--- func desc
+---@param pack_name string
+---@param component_name string
+---@param x integer
+---@param y integer
+---@param z integer
+---@param paste_direction string
+---@param paste_type string
+function paste(pack_name, component_name, x, y, z, paste_direction, paste_type) end
 
 ---Replaces certain blocks in a cubic region with another block
 ---@param x1 integer X position of the lower bound of the region.
@@ -135,6 +169,8 @@ function open_block(x, y, z) end
 function replace_region(x1, y1, z1, x2, y2, z2, old_block_id, new_blodk_id, percentage, seed) end
 
 ---Sets the block at the coordinate to be a falling block with no starting velocity
+---
+---Flying blocks deal damage baesd on their current velocity (the faster they are the more damage they do) and if they do not break or hit a target they leave a block of the associated Block ID
 ---@param x integer X posiiton of the block.
 ---@param y integer Y posiiton of the block.
 ---@param z integer Z posiiton of the block.
@@ -154,6 +190,29 @@ function set_falling_block(x, y, z, gravity_multiplier, break_chance) end
 ---@param seed? integer The seed to use if percentage is less than 100%. Omit for a random seed.
 ---@see replace_region
 function set_region(x1, y1, z1, x2, y2, z2, block_id, percentage, seed) end
+
+---Sets aux data in a cubic region
+---@param x1 integer X position of the lower bound of the region.
+---@param y1 integer Y position of the lower bound of the region.
+---@param z1 integer Z position of the lower bound of the region.
+---@param x2 integer X position of the upper bound of the region.
+---@param y2 integer Y position of the upper bound of the region.
+---@param z2 integer Z position of the upper bound of the region.
+---@param aux_value integer The aux data to set to blocks within the region.
+---@param is_high_aux boolean Whether the `aux_value` is for low or high data.
+---@param percentage? integer The percentage of blocks to set within the region. Omit for `100` or 100%.
+---@param seed? integer The seed to use if percentage is less than 100%. Omit for a random seed.
+function set_region_aux(x1, y1, z1, x2, y2, z2, aux_value, is_high_aux, percentage, seed) end
+
+---Sets blocks in a spherical region
+---@param x integer The X position of the circle.
+---@param y integer The Y position of the circle.
+---@param z integer The Z position of the circle.
+---@param sphere_radius integer The maximum distance from the center of the circle for the random position.
+---@param block_id integer The Block ID to set blocks within the region to.
+---@param percentage? integer The percentage of blocks to set within the region. Omit for `100` or 100%.
+---@param seed? integer The seed to use if percentage is less than 100%. Omit for a random seed.
+function set_sphere(x, y, z, sphere_radius, block_id, percentage, seed) end
 
 ---Sets the Texture ID of a retexturable block
 ---@param x integer X posiiton of the block.

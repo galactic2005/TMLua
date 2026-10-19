@@ -70,11 +70,11 @@ function get_random(maximum) end
 ---@param x number The X position of the circle.
 ---@param y number The Y position of the circle.
 ---@param z number The Z position of the circle.
----@param radius number The maximum distance from the center of the circle for the random position.
+---@param sphere_radius number The maximum distance from the center of the circle for the random position.
 ---@return number # The randomly picked X position of the circle.
 ---@return number # The randomly picked Y position of the circle.
 ---@return number # The randomly picked Z position of the circle.
-function get_random_pos(x, y, z, radius) end
+function get_random_pos(x, y, z, sphere_radius) end
 
 ---Returns the viewport's (the player's screen) height in pixels
 ---@return integer # The height of the viewport in pixels

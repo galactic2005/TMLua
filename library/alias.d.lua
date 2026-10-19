@@ -67,10 +67,26 @@
 
 ---@alias msgbox_integer integer
 ---| `0` # No selection (cancelled input.)
----| `1` # A Button
----| `2` # X Button
----| `3` # Y Button
----| `4` # B Button
+---| `1` # A Button selected.
+---| `2` # X Button selected.
+---| `3` # Y Button selected.
+---| `4` # B Button selected.
+
+---@alias paste_paste_direction_string string
+---| `"left"` #
+---| `"forward"` #
+---| `"right"` #
+---| `"back"` #
+---| `"backward"` #
+---| `"up"` #
+---| `"down"` #
+---| `"proxy"` #
+---| `"proxydefault"` #
+
+---@alias paste_paste_type_string string
+---| `"Merge"` # All blocks excluding empty blocks are pasted and will overwrite blocks regardless of what was there.
+---| `"NoOverwrite"` # Blocks are only pasted if the block they're being pasted into is empty.
+---| `"Overwrite"` # All blocks including empty blocks are pasted and will overwrite blocks regardless of what was there (all blocks within the component's bounding box will be overwritten.)
 
 ---@alias permission_string string
 ---| `"Adventure"` # Permits the player to:<ul><li>Use Economized Shops (though are unable to Econimize shops themselves.)</li><li>Collect pickups.</li><li>Use Bookcases, Unlocked Chests and Furnaces.</li></ul>This permission is enabled by default on new worlds for default permissions.
