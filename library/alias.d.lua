@@ -48,6 +48,21 @@
 ---| `"ButtonY"` # The event script triggered by the Y Button.
 ---| `"ButtonB"` # The event script triggered by the B Button.
 
+---@alias hud_properties_string string
+---| `"abs"` #
+---| `"absolute"` #
+---| `"cctv"` #
+---| `"label"` #
+---| `"numbers"` #
+---| `"right"` #
+---| `"rightjustify"` #
+---| `"showlabel"` #
+---| `"shownumbers"` #
+---| `"vertical"` #
+
+---@alias hud_shapes_string string
+---| `"rect"` # Rectangle shape
+
 ---@alias item_equip_slot_string string
 ---| `"left"` # The Item Slot of the actor's left hand.
 ---| `"right"` # The Item Slot of the actor's right hand.
@@ -356,6 +371,13 @@
 ---| `"ZombiePain"` # The sound effect used when a Zombie Actor gets hurt.
 ---| `"ZombieStrike"` # An unused sound effect used when a Zombie Actor strikes a target.
 ---| `"ZombieWarning"` # An unused sound effect used when a Zombie Actor warns a target.
+
+---@alias teleport_direction_string string
+---| `""` # Teleport without modifying view direction.
+---| `"n"` # Teleport facing North.
+---| `"e"` # Teleport facing East.
+---| `"s"` # Teleport facing South.
+---| `"w"` # Teleport facing West.
 
 ---@alias weekday_integer integer
 ---| `0` # Sunday

@@ -163,11 +163,11 @@ function set_random_seed(seed) end
 ---@param x integer X position of the Teleport.
 ---@param y integer Y position of the Teleport.
 ---@param z integer Z position of the Teleport.
----@param dir? "n"|"e"|"s"|"w" The direction to face the actor towards after teleporting. Omit to keep the actor's current view direction.
+---@param dir? teleport_direction_string The direction to face the actor towards after teleporting. Omit to keep the actor's current view direction.
 ---@see teleport_all
 function teleport(x, y, z, dir) end
 
----Teleports all actors within a specified region
+---Teleports all actors within a cubic region
 ---@param x1 integer X position of the lower bound of the region.
 ---@param y1 integer Y position of the lower bound of the region.
 ---@param z1 integer Z position of the lower bound of the region.
@@ -178,6 +178,6 @@ function teleport(x, y, z, dir) end
 ---@param y3 integer X position of the Teleport.
 ---@param z3 integer X position of the Teleport.
 ---@param is_rel? boolean If `true`, than all actors will be teleported relatively to the lower bound of the region. Omit for `true`.
----@param dir? "n"|"e"|"s"|"w" The direction to face the actors' towards after teleporting. Omit to keep all actors' current view direction.
+---@param dir? teleport_direction_string The direction to face the actors' towards after teleporting. Omit to keep all actors' current view direction.
 ---@see teleport
 function teleport_all(x1, y1, z1, x2, y2, z2, x3, y3, z3, is_rel, dir) end
